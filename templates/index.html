@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Sitio Web</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Sitio Web - GitFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-    <h1 class="text-3xl text-center mt-10">Bienvenidos al Sitio Web</h1>
+
+  <h1 class="text-3xl font-bold text-center mt-10">Sitio Web con GitFlow</h1>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <div class="max-w-md mx-auto mt-10">
+    <form id="contact-form" class="space-y-4 bg-white p-6 rounded shadow">
+      <h2 class="text-xl font-bold">Contacto</h2>
+      <input type="text" id="name" placeholder="Nombre" class="w-full p-2 border rounded">
+      <input type="email" id="email" placeholder="Correo" class="w-full p-2 border rounded">
+      <textarea id="message" placeholder="Mensaje" class="w-full p-2 border rounded"></textarea>
+      <button type="submit" class="bg-blue-500 text-white p-2 rounded w-full">Enviar</button>
+    </form>
+  </div>
+
+  <!-- CARRUSEL DE IMÁGENES -->
+  <div class="relative w-full max-w-2xl mx-auto mt-10">
+    <div id="carousel" class="flex overflow-hidden">
+      <img src="https://via.placeholder.com/800x400/3b82f6/white?text=Imagen+1" class="w-full">
+      <img src="https://via.placeholder.com/800x400/10b981/white?text=Imagen+2" class="w-full hidden">
+      <img src="https://via.placeholder.com/800x400/f59e0b/white?text=Imagen+3" class="w-full hidden">
+    </div>
+    <button id="prev" class="absolute top-1/2 left-0 bg-gray-800 text-white p-2">◀</button>
+    <button id="next" class="absolute top-1/2 right-0 bg-gray-800 text-white p-2">▶</button>
+  </div>
+
+  <script src="/static/js/script.js"></script>
 </body>
 </html>
