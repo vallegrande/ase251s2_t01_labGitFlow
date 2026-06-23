@@ -1,4 +1,5 @@
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+// dev1 - Validación formulario
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
@@ -7,7 +8,13 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     alert('Por favor, completa todos los campos.');
     return;
   }
-  alert('Formulario enviado con éxito.');
+  const response = await fetch('/send-email', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: `name=${name}&email=${email}&message=${message}`
+  });
+  const result = await response.json();
+  alert(result.message);
 });
 
 // dev2 - Carrusel
